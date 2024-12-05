@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert number to letters</title>
+</head>
+<body>
+  <script>
+    let word =[]
+    function convertNumberToWord(num) {
+       const ones = ['','یک','دو','سه','چهار','پنج','شش','هفت','هشت','نه'];
+       const tens = ['','ده','بیست','سی','چهل','پنجاه','شصت','هفتاد','هشتاد','نود'];
+       const hundreds = ['','صد','دویست','سیصد','چهارصد','پانصد','ششصد','هفتصد','هشتصد','نهصد',];
+       const thousands = [
+        '','هزار'
+       ]
+       if (num>= 1000) {
+        let thousandPart = Math.floor(num/1000);
+        word.push(ones[thousandPart]+ '' +thousands[1]);
+        num%=1000
+       }
+       if (num>=100) {
+        let hundredPart = Math.floor(num/100);
+        word.push(hundreds[hundredPart]);
+        num%=100
+       }
+       if (num>=20) {
+        let tenPart = Math.floor(num/10);
+       word.push(tens[tenPart]);
+       num%=10
+       }
+       if (num>0) {
+        word.push(ones[num]);
+       }
+       return word.join(' و ');
+    }
+    let number = prompt("please enter number");
+    let result = convertNumberToWord(parseInt(number));
+    alert(result);
+  </script>  
+</body>
+</html>

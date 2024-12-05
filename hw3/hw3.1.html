@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function creatStudentInfo(firstName,lastName,fatherName,nationalCode,birthDate,birthPlace,age,grade,homePhone,parentPhone,fatherJob,motherJob,address) {
+let student = {
+    firstName: firstName,
+    lastName: lastName,
+    fatherName: fatherName,
+    nationalCode: nationalCode,
+    birthDate: birthDate,
+    birthPlace: birthPlace,
+    age: age,
+    grade: grade,
+    homePhone: homePhone,
+    parentPhone: parentPhone,
+    fatherJob: fatherJob,
+    motherJob: motherJob,
+    address: address,
+};
+return student;
+};
+
+function editStudentInfo(students, nationalCode, field, neweValue) {
+  for (const student of students) {
+    if (student.nationalCode === nationalCode) {
+      if (student.include(field)) {
+        student[field] = neweValue;
+        console.log("property ${field} hase changed");
+        return;  
+      }  else {
+        console.log("property ${field} hase not exist");
+        return;
+      }
+    }
+  }
+ console.log("student with this nationalcode not found");
+    
+};
+
+function deletStudent(students,nationalCode) {
+   let index = students.findIndex(student => student.nationalCode === nationalCode);
+   if (index !== -1) {
+    studend.splice(index,1);
+    console.log("student hase deleted");
+   } else {
+    console.log("student with this nationalcode not found"); 
+   }
+};
+
+function creatGradeInfo(subjectName,subjectCoefficient,subjectGrade) {
+  let gradeInfo = {
+    subjectName: subjectName,
+    subjectCoefficient: subjectCoefficient,
+    subjectGrade: subjectGrade,
+  };
+  return gradeInfo;  
+};
+
+function editStudentGrade(grades,subjectName,newGrade) {
+    let found = false;
+    for (let grade of grades) {
+      if (grade.subjectName === subjectName)  {
+        grade.subjectGrade = newGrade;
+        found = true;
+        console.log("${subjectName} hase changed to ${newGrade}");
+        break; 
+      }
+    }
+    if (! found) {
+        console.log("${subjectName} not found");
+        
+    }
+};
+
+function deleteStudentGrade(grades,subjectName) {
+    let index = grades.findIndex(grade => grade.subjectName === subjectName);
+    if (index !== -1) {
+        grades.splice(index,1);
+        console.log("${subjectName} hase deleted");
+    } else {
+        console.log("${subjectName} not found");  
+    }
+};
+
+function name(params) {
+    
+}
+
+    </script>
+</body>
+</html>

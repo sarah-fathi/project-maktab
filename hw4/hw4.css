@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    direction: ltr;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+input::placeholder {
+    color: #aaa;
+}
+.buttons {
+    all: unset;
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    cursor: pointer    
+}
+button:hover {
+    background-color: #0056b3;
+}
+#submit, #sort {
+    background-color:transparent;
+    border:2px solid #007bff;
+    color: #007BFF;
+}
+#sort-menu {
+display: none;
+position: absolute;
+background-color: white;
+border-radius: 5px;
+padding: 10px;
+top: 40px;
+}
+#sort-menu button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    background-color: #f1f1f1;
+    color: black;
+}
+#sort-menu button :hover {
+    background-color: #ddd;
+}
+.items {
+    margin-top: 20px;
+}
+.item {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background-color: #f9f9f9;
+padding: 15px;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+.item .title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.item .details {
+    color: #555;
+    margin-bottom: 10px;
+}
+.item .date {
+    color: #aaa;
+    margin-bottom: 10px;
+}
+.item .actions {
+    display: flex;
+    gap: 10px;
+    align-items: first baseline;
+    flex-direction: row;
+}
+.item .actions i {
+    cursor: pointer;
+    color: #007BFF;
+    font-size: 18px;
+}
+.item .actions i:hover {
+    color: #0056b3;
+}
+.hidden {
+    display: none;
+}
+#submit {
+    background-color: #28a745;
+}
+#submit:hover {
+    background-color: #218838;
+}
+#sort {
+    background-color: #ffc107;
+}
+#sort :hover {
+    background-color: #e0a800;
+}

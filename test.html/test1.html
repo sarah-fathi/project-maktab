@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//محاسبه حقوق نهایی با ساعت کار اضافی
+
+function calculateSalary(hourlyRate =20 , workedHours=160) {
+   let regularHours = Math.min(workedHours , 160);
+   let overtimeHours = Math.max(0 , workedHours-160); 
+   let regularPay = regularHours * hourlyRate;
+   let overtimePay = overtimeHours * hourlyRate * 1.5;
+   let totalPay = regularPay + overtimePay;
+   return totalPay;
+}
+console.log(calculateSalary());
+
+ 
+
+
+    </script>
+</body>
+</html>
